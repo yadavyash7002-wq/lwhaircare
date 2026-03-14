@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOIR Studio | Premium Men's Grooming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--gold:#c9a84c;
+--cream:#f0ece0;
+--black:#0b0b0b;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:var(--black);
+color:var(--cream);
+font-family:Inter, sans-serif;
+line-height:1.6;
+}
+
+/* hero */
+
+.hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-family:'Cormorant Garamond', serif;
+font-size:72px;
+letter-spacing:3px;
+color:var(--gold);
+}
+
+.hero p{
+margin-top:20px;
+font-size:20px;
+opacity:0.85;
+}
+
+.hero button{
+margin-top:35px;
+padding:14px 36px;
+border:1px solid var(--gold);
+background:transparent;
+color:var(--gold);
+font-size:16px;
+cursor:pointer;
+transition:all .4s ease;
+}
+
+.hero button:hover{
+background:var(--gold);
+color:black;
+}
+
+/* section */
+
+section{
+padding:80px 10%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+font-family:'Cormorant Garamond', serif;
+font-size:40px;
+color:var(--gold);
+}
+
+/* services */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+border:1px solid rgba(255,255,255,0.08);
+padding:35px;
+background:#111;
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:var(--gold);
+}
+
+.card h3{
+font-family:'Cormorant Garamond', serif;
+font-size:26px;
+margin-bottom:10px;
+}
+
+.price{
+color:var(--gold);
+margin-top:10px;
+font-size:20px;
+}
+
+/* testimonial */
+
+.testimonial{
+text-align:center;
+max-width:700px;
+margin:auto;
+font-size:18px;
+opacity:0.9;
+}
+
+.testimonial span{
+display:block;
+margin-top:20px;
+color:var(--gold);
+}
+
+/* booking */
+
+.cta{
+text-align:center;
+}
+
+.cta button{
+padding:16px 42px;
+border:none;
+background:var(--gold);
+color:black;
+font-size:18px;
+cursor:pointer;
+transition:.4s;
+}
+
+.cta button:hover{
+transform:scale(1.05);
+}
+
+/* animation */
+
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+footer{
+text-align:center;
+padding:30px;
+opacity:0.6;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<div class="hero fade-up">
+<div>
+<h1>NOIR Studio</h1>
+<p>Precision Grooming for the Modern Gentleman</p>
+<button>Book Appointment</button>
+</div>
+</div>
+
+<!-- SERVICES -->
+
+<section>
+
+<h2 class="section-title fade-up">Signature Services</h2>
+
+<div class="services">
+
+<div class="card fade-up">
+<h3>Executive Haircut</h3>
+<p>Precision haircut tailored to your face shape and style.</p>
+<div class="price">$35</div>
+</div>
+
+<div class="card fade-up">
+<h3>Luxury Beard Sculpt</h3>
+<p>Hot towel treatment, beard shaping and conditioning.</p>
+<div class="price">$25</div>
+</div>
+
+<div class="card fade-up">
+<h3>Royal Grooming Package</h3>
+<p>Haircut, beard sculpt, relaxing scalp massage.</p>
+<div class="price">$60</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIAL -->
+
+<section>
+
+<h2 class="section-title fade-up">Client Experience</h2>
+
+<div class="testimonial fade-up">
+“NOIR Studio is more than a haircut — it's a premium grooming experience.
+The attention to detail and atmosphere is unmatched.”
+<span>— Daniel R.</span>
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta fade-up">
+
+<h2 class="section-title">Elevate Your Style</h2>
+
+<button>Book Your Session</button>
+
+</section>
+
+<footer>
+© 2026 NOIR Studio — Premium Men's Grooming
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
+
+document.querySelectorAll('.fade-up').forEach(el=>{
+observer.observe(el)
+})
+
+</script>
+
+</body>
+</html>
